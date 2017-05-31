@@ -1,10 +1,6 @@
 <template>
-<div id="app">
-    <div class="container">
-        <div name="fade" tag="div" v-dragula="items" drake="items">
-            <div class="item" v-for="(item, index) in items" :key="item"><img :src="item" width="200px" height="130px"></div>
-        </div>
-    </div>
+<div v-dragula="items" drake="items">
+    <div class="item" v-for="(item, index) in items" :key="item"><img :src="item" width="200px" height="130px"></div>
 </div>
 </template>
 
@@ -34,12 +30,15 @@ export default {
     pointer-events: none;
     transition: all 0s !important;
 }
+
 .gu-transit {
     color:white;
-    border:1px dotted blue;
+    border-radius: 2px;
+    border: 1px dashed #e1e1e1;
     box-sizing: border-box;
     opacity:1;
 }
+
 .gu-transit img {
     display:none;
 }
