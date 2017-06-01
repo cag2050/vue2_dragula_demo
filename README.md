@@ -1,5 +1,20 @@
 # vue2_dragula_demo
 
+* 步骤：
+1. 安装：npm install vue2-dragula --save-dev
+2. main.js 引入：
+```
+import Vue from 'vue'
+import { Vue2Dragula } from 'vue2-dragula'
+
+Vue.use(Vue2Dragula, {
+  logging: {
+    service: true
+  }
+});
+```
+3. 编辑组件
+
 > A Vue.js project
 
 ## Build Setup
