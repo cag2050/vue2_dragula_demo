@@ -1,6 +1,8 @@
 <template>
 <div v-dragula="items" drake="items">
-    <div class="item" v-for="(item, index) in items" :key="item"><img :src="item" width="200px" height="130px"></div>
+    <div class="item" v-for="(item, index) in items" :key="item">
+        <img :src="item" width="200px" height="130px">
+    </div>
 </div>
 </template>
 
