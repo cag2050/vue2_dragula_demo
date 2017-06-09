@@ -1,7 +1,10 @@
 <template>
-<div v-dragula="items" drake="items">
+<div v-dragula="items" drake="items" class="items">
     <div class="item" v-for="(item, index) in items" :key="item">
-        <img :src="item" width="200px" height="130px">
+        <div class="container">
+            <img :src="item" width="200px" height="130px">
+            <div class="word">图片说明</div>
+        </div>
     </div>
 </div>
 </template>
@@ -26,26 +29,10 @@ export default {
 }
 </script>
 
-<style>
-.gu-mirror {
-    position: absolute;
-    pointer-events: none;
-    transition: all 0s !important;
-}
-
-.gu-transit {
-    color:white;
-    border-radius: 2px;
-    border: 1px dashed #e1e1e1;
-    box-sizing: border-box;
-    opacity:1;
-}
-
-.gu-transit img {
-    display:none;
-}
-
-.item {
+<style lang="stylus">
+.items
+    margin-top 30px
+.item
     display: inline-block;
     width: 200px;
     height: 130px;
@@ -53,6 +40,40 @@ export default {
     cursor: move;
     transition: all 1s;
     text-align: center;
+    .container
+        height 152px
+        .word
+            visibility: hidden;
+            height: 22px;
+        &:hover
+            .word
+                visibility visible
+
+.gu-mirror {
+    position: absolute;
+    pointer-events: none;
+    transition: all 0s !important;
+    height: 152px;
+}
+.gu-mirror .container .word {
+    display: none;
+}
+
+.gu-transit {
+    color:white;
+    border-radius: 2px;
+    border: 1px dashed #e1e1e1;
+    box-sizing: border-box;
+    top: -22px;
+    position: relative;
+    opacity:1;
+}
+
+.gu-transit img {
+    display:none;
+}
+.gu-transit .word {
+    display:none;
 }
 
 .fade-enter,

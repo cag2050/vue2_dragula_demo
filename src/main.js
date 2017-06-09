@@ -7,15 +7,7 @@ import { Vue2Dragula } from 'vue2-dragula'
 
 Vue.config.productionTip = false
 
-Vue.use(Vue2Dragula, {
-    logging: {
-        directive: false,
-        plugin: false,
-        service: false,
-        dragHandler: false,
-        modelManager: false
-    }
-})
+Vue.use(Vue2Dragula)
 
 /* eslint-disable no-new */
 // new Vue({
